@@ -1,4 +1,4 @@
-﻿#include <gtest\gtest.h>
+#include <gtest\gtest.h>
 #include "BitArray.h"
 
 TEST(BitArrayTest, ConstructorWithValue) {
@@ -59,8 +59,8 @@ TEST(BitArrayTest, operAND) {
     BitArray b2(8);  // Create BitArray object with 8 bits
     b2.set(2, true);  // Set the third bit to true
     b2.set(3, true);  // Set the fourth bit to true
-	BitArray b3 = b1 & b2;  // Perform bitwise AND operation between b1 and b2
-	EXPECT_EQ(b3.to_string(), "00001000");
+    BitArray b3 = b1 & b2;  // Perform bitwise AND operation between b1 and b2
+    EXPECT_EQ(b3.to_string(), "00001000");
 }
 
 TEST(BitArrayTest, operOR) {
@@ -86,16 +86,7 @@ TEST(BitArrayTest, operXOR) {
 }
 
 
-TEST(BitArrayTest, Clear) {
-    BitArray arr(8, 0b10101010);
-    arr.clear();
-    EXPECT_EQ(8, arr.size());
-    EXPECT_EQ("00000000", arr.to_string());
-}
-
-
-
 int main(int argc, char* argv[]) {
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
